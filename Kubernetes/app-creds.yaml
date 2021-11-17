@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-pod
+spec:
+  containers:
+  - image: nginx
+    name: app-pod
+    volumeMounts:
+    - name: datavol
+      mountPath: "/etc/secret"
+      readOnly: true
+  volumes:
+  - name: datavol
+    secret:
+      secretName: app-creds
