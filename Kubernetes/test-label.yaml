@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    env: production
+    app: webserver
+  name: test-label
+spec:
+  containers:
+  - image: nginx
+    name: nginx-container

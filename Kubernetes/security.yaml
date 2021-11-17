@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: busybox-security
+spec:
+  securityContext:
+    runAsUser: 1000
+    runAsGroup: 2000
+    fsGroup: 3000
+  containers:
+  - name: security
+    image: busybox
+    command:
+      - sleep
+      - "3600"
+    volumeMounts:
+      - name: my-vol
+        mountPath: /my-volume
+  volumes:
+  - name: my-vol
+    hostPath: 
+        path: /data
+        type: DirectoryOrCreate
+    

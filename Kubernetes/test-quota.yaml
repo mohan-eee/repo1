@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: test-quota
+  name: test-quota
+spec:
+  containers:
+  - image: nginx
+    name: test-quota
+    resources: 
+      requests:
+        memory:  "128Mi"
+      limits:
+        memory: "512Mi"
+        cpu: "2"

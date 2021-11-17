@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: test-cmdargs
+  name: test-cmdargs
+spec:
+  containers:
+  - image: busybox
+    name: cmdcontainer
+    command: ["sleep"]
+    args: 
+     - "3600"
